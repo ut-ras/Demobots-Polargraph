@@ -1,0 +1,17 @@
+
+# compiled python files
+*.pyc
+*__pycache__/
+
+# config files
+*config.py
+*app.yaml
+*keys/
+*ciotc_config.h
+*ca.crt
+
+# sql proxy file
+*cloud_sql_proxy
+
+#virtual env
+*env/
