@@ -12,35 +12,37 @@ MultiStepper steppers;
 
 /* Polargraph status */
 pos pos_current = {0, 0};     //current position of our drawing instrument
-int left_length;
-int right_length;
-long left_steps;
-long right_steps;
 double baseSpeed = 30.0;
-double accel = 90.0;
+//double accel = 90.0;
 boolean isDrawing = false;
 
+double left_length = 0;
+double right_length = 0;
+long left_steps = 0;
+long right_steps = 0;
 
-int getLeftStringLength(pos pos_new);
-int getRightStringLength(pos pos_new);
+
+double getLeftStringLength(pos pos_new);
+double getRightStringLength(pos pos_new);
+
 bool checkIfAtPos();
 bool setPos(pos pos_new);
 bool isValidPos(pos new_pos);
-int getDistance(pos p1, pos p2);
-bool drawBuffer();
 
 
 void setupPolargraph() {
   stepperL.setMaxSpeed(baseSpeed);
   //stepperL.setAcceleration(accel);
-  //stepperL.moveTo(0);
 
   stepperR.setMaxSpeed(baseSpeed);
   //stepperR.setAcceleration(accel);
+
+  //stepperL.moveTo(0);
   //stepperR.moveTo(0);
 
   steppers.addStepper(stepperL);
   steppers.addStepper(stepperR);
+
   Serial.println("Starting at l_steps=" + String(stepperL.currentPosition()) + " r_steps=" + String(stepperR.currentPosition()));
   Serial.println("Arrived at pos x=" + String(pos_current.x) + " y=" + String(pos_current.y) + " l_steps=" + String(stepperL.currentPosition()) + " r_steps=" + String(stepperR.currentPosition()));
 
@@ -98,11 +100,11 @@ void resetPos() {
 
 /* Get the length of the string from the motor to the marker
 */
-int getLeftStringLength(pos pos_new) {
+double getLeftStringLength(pos pos_new) {
   return sqrt(pow((X_MAX + pos_new.x), 2) + pow((Y_MAX - pos_new.y), 2)) ;
 }
 
-int getRightStringLength(pos pos_new) {
+double getRightStringLength(pos pos_new) {
   return sqrt(pow((X_MAX - pos_new.x), 2) + pow((Y_MAX - pos_new.y), 2)) ;
 }
 
@@ -111,9 +113,11 @@ int getRightStringLength(pos pos_new) {
 */
 bool setPos(pos pos_new) {
   if (isValidPos(pos_new)) {
-    int left_length_new = getLeftStringLength(pos_new);
-    int right_length_new = getRightStringLength(pos_new);
+    // get desired L R string lengths
+    double left_length_new = getLeftStringLength(pos_new);
+    double right_length_new = getRightStringLength(pos_new);
 
+    //calculate the new absolute step for each motor, based on the difference between curret and new string lengths
     //mm_to_steps_pulley is (steps per rotation) / (pulley circumference)
     int left_steps_diff = (left_length_new - left_length) * mm_to_steps_pulley;
     int right_steps_diff = -1 * (right_length_new - right_length) * mm_to_steps_pulley;
@@ -127,11 +131,12 @@ bool setPos(pos pos_new) {
     Serial.println("New Steps: L=" + String(left_steps) + " R=" + String(right_steps) + "\n");
 
     if ((left_steps_diff != 0) || (right_steps_diff != 0)) {
+      //set the length values to the new length values if the motors actually moved
       left_length = left_length_new;
       right_length = right_length_new;
       pos_current = pos_new;
 
-      //this starts the movement, each motor is incremented a small amount each loop, very quickly
+      //give the new steps to the MultiStepper, this starts the movement, each motor is incremented a small amount each loop with run()
       long steps[] = {left_steps, right_steps};
       steppers.moveTo(steps);
     }
@@ -161,7 +166,7 @@ bool isValidPos(pos new_pos) {
 }
 
 //distance between coordinates p1 and p2
-int getDistance(pos p1, pos p2) {
+double getDistance(pos p1, pos p2) {
   return sqrt(pow((p2.x - p1.x), 2) + pow((p2.y - p1.y), 2));
 }
 
@@ -174,9 +179,9 @@ int getBufferSize() { return pos_buffer.count(); }
 
 pos getCurrentPos() { return pos_current; }
 
-int getLeftLength() { return left_length; }
+double getLeftLength() { return left_length; }
 
-int getRightLength() { return right_length; }
+double getRightLength() { return right_length; }
 
 boolean getIsDrawing() { return isDrawing; }
 

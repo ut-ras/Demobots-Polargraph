@@ -45,8 +45,10 @@ int getBufferSize();
 
 pos getCurrentPos();
 void resetPos();
-int getLeftLength();
-int getRightLength();
+
+double getLeftLength();
+double getRightLength();
+double getDistance(pos p1, pos p2);
 
 boolean getIsDrawing();
 void setIsDrawing(boolean drawing);

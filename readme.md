@@ -6,6 +6,8 @@ Currently hosted on utras-demobots.appspot.com but you must be an admin to contr
 Cloud IOT provides a simple and secure REST API (cloudiotdevice) for the device to post state and get config to the device manager. The device manager stores some of the most recent states and configs, and another API (cloudiot) can access the device manager. </br>
 </br>
 Google AppEngine is a platform for building webapps, it will host your webapp and five you access to some diagnostic tools. </br>
+</br>
+If you deploy the project to appengine instead of running the server locally, pay attention to Cloud's pricing and data quotas, there is a free trial but the credits will run out eventually.
 
 ## Google Cloud Tutorials
 AppEngine Tutorial: Setting up gcloud development environment, python bookshelf app, Flask, Jinja, OAuth, CloudSQL</br>
@@ -54,6 +56,10 @@ chmod +x cloud_sql_proxy</br>
 Run Proxy:</br>
 ./cloud_sql_proxy -instances=project-name:us-central1:sql-name=tcp:3306</br>
 
+## Hardware
+ * [ESP8266 ESP 12-E WiFi Development Board](https://www.amazon.com/Makerfocus-ESP8266-ESP-12E-Internet-Development/dp/B01IK9GEQG)
+ * 2x [NEMA 17 2A Stepper Motors](https://www.amazon.com/Stepper-Bipolar-4-lead-Connector-Printer/dp/B00PNEQKC0/ref=sr_1_4?ie=UTF8&qid=1517537888&sr=8-4&keywords=nema+17+stepper+motor&refinements=p_72%3A2661618011)
+ * 2x [A4988 Pololu Stepper Drivers](https://www.pololu.com/product/1182)
 
 ## TODO
 Come to Demobots meetings or message R.A.S. if you want to participate! Any ideas are welcome. We are going to set up a more official task system in the future, but for now here are some tasks.
@@ -61,7 +67,7 @@ Come to Demobots meetings or message R.A.S. if you want to participate! Any idea
 #### Arduino:
 * Move the update state/config HTTP requests onto a separate thread from the Steppers
 * Serial Mode (takes config as string)
-* Sometimes crashes with large configs, even when they are small enough for the device manager and the base64 conversion buffer. We are splitting drawings into multiple configs when necessary but we should investigate and try to increase max size to match the max for the IoT HTTP bridge (64kb) to minimize the number of transmissions. 
+* Minimize size and number of config transmissions for drawings
 
 #### Cloud:
 * Maybe using device metadata would be helpful for stuff like polargraph size, wifi connection settings, etc
