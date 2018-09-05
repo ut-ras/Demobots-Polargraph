@@ -12,7 +12,7 @@ MultiStepper steppers;
 
 /* Polargraph status */
 pos pos_current = {0, 0};     //current position of our drawing instrument
-double baseSpeed = 30.0;
+double baseSpeed = 30.0 * STEP_MULT;
 //double accel = 90.0;
 boolean isDrawing = false;
 
@@ -130,16 +130,16 @@ bool setPos(pos pos_new) {
     Serial.println("New Lengths: L=" + String(left_length_new) + " R=" + String(right_length_new));
     Serial.println("New Steps: L=" + String(left_steps) + " R=" + String(right_steps) + "\n");
 
-    if ((left_steps_diff != 0) || (right_steps_diff != 0)) {
-      //set the length values to the new length values if the motors actually moved
-      left_length = left_length_new;
-      right_length = right_length_new;
-      pos_current = pos_new;
+    left_length = left_length_new;
+    right_length = right_length_new;
 
-      //give the new steps to the MultiStepper, this starts the movement, each motor is incremented a small amount each loop with run()
-      long steps[] = {left_steps, right_steps};
-      steppers.moveTo(steps);
-    }
+    //set the length values to the new length values if the motors actually moved
+    if ((left_steps_diff != 0) || (right_steps_diff != 0)) {  pos_current = pos_new;   }
+
+    //give the new steps to the MultiStepper, this starts the movement, each motor is incremented a small amount each loop with run()
+    long steps[] = {left_steps, right_steps};
+    steppers.moveTo(steps);
+
     return true;
   }
   else {

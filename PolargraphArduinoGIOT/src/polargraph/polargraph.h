@@ -4,9 +4,11 @@
 /* Measurements (mm)*/
 #define X_MAX 515
 #define Y_MAX 355
+#define STEP_MULT 8
 #define PULLEY_RADIUS 43  //update this
 #define PULLEY_CIRC (2 * PULLEY_RADIUS * PI)
-#define STEPS_PER_ROT 200
+#define STEPS_PER_ROT 200 * STEP_MULT
+
 //steps = distance * mm_to_steps_pulley
 #define mm_to_steps_pulley double(STEPS_PER_ROT) / double(PULLEY_CIRC);
 
