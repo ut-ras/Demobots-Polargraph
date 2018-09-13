@@ -5,7 +5,7 @@ Currently hosted on utras-demobots.appspot.com but you must be an admin to contr
 </br>
 Cloud IOT provides a simple and secure REST API (cloudiotdevice) for the device to post state and get config to the device manager. The device manager stores some of the most recent states and configs, and another API (cloudiot) can access the device manager. </br>
 </br>
-Google AppEngine is a platform for building webapps, it hosts webapp and give you access to diagnostic tools. </br>
+Google AppEngine is a platform for building webapps, it hosts webapp and gives you access to diagnostic tools. </br>
 </br>
 If you deploy the project to appengine instead of running the server locally, pay attention to Cloud's pricing and data quotas, there is a free trial but the credits will run out eventually.
 
