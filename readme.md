@@ -76,6 +76,7 @@ Come to Demobots meetings or message R.A.S. if you want to participate! Any idea
 
 #### AppEngine:
 * Editable canvas in Add Drawing
+* Improve SVG tools to handle multiple paths
 * SVG polargraph size text input
 * Background thread or task queue when number of coordinates needs multiple configs
 
