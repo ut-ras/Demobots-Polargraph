@@ -37,6 +37,9 @@ Cloud SQL </br>
 Cloud IoT Manager with HTTP bridge</br>
 
 ![Polargraph Webapp Image](img/polargraph_home.png)
+</br>
+![Polargraph Webapp Image](img/polargraph_drawings.PNG)
+
 
 ## Google Cloud Console Stuff to Set Up
 Things to do when setting up this project. In general, follow the examples and tutorials.
