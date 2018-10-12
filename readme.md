@@ -9,7 +9,7 @@ Google AppEngine is a platform for building webapps, it hosts webapp and gives y
 </br>
 If you deploy the project to appengine instead of running the server locally, pay attention to Cloud's pricing and data quotas, there is a free trial but the credits will run out eventually.
 
-![Polargraph Image](polargraph.gif)
+![Polargraph Image](img/polargraph.gif)
 
 ## Google Cloud Tutorials
 AppEngine Tutorial: Setting up gcloud development environment, python bookshelf app, Flask, Jinja, OAuth, CloudSQL</br>
@@ -35,6 +35,8 @@ Google App Engine (python with Flask, Jinja, SQLAlchemy)</br>
 OAuth 2.0 </br>
 Cloud SQL </br>
 Cloud IoT Manager with HTTP bridge</br>
+
+![Polargraph Webapp Image](img/polargraph_home.png)
 
 ## Google Cloud Console Stuff to Set Up
 Things to do when setting up this project. In general, follow the examples and tutorials.
