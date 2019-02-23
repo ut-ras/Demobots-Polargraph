@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Demobots Polargraph</title></head>
+
+  <body style="width:auto; font-family:'Arial'; background-color:#1d1f21; color:#c5c8c6; padding:1em;">
+      <h1>Demobots Polargraph</h1>
+
+      <div id="div_input_coorinate" style="padding:1em 0em;">
+        <p>Input Coordinates</p>
+        <input id="input_coorinate" type="text" placeholder="(x1,y1)(x2,y2)(x3,y3)" >
+      </div>
+
+      <div id="div_btn_control" style="padding:1em 0em;">
+        <button id="btn_start">Start</button>
+        <button id="btn_stop">Stop</button>
+        <button id="btn_zero">Zero</button>
+      </div>
+
+      <div style="padding:1em 0em;">
+        <button id="btn_get_state">Get State</button>
+      </div>
+
+      <div id="dev_device_info" style="padding:1em 0em;">
+        <p>Last Config:</p>
+        <p id="last_config"></p>
+        <p>Last State:</p>
+        <p id="last_state"></p>
+      </div>
+
+      <script>
+      var last_config = {};
+      var last_state = {};
+
+      var btn_start = document.getElementById('btn_start');
+      var btn_stop = document.getElementById('btn_stop');
+      var btn_zero = document.getElementById('btn_zero');
+      var btn_get_state = document.getElementById('btn_get_state');
+
+      btn_start.addEventListener('click', function(){
+        var input_coorinate = document.getElementById('input_coorinate');
+        var coordinates = input_coorinate.value;
+        configJSON(coordinates, true, false)
+      });
+      btn_stop.addEventListener('click', function()       { configJSON('', false, false) });
+      btn_zero.addEventListener('click', function()       { configJSON('', false, true) });
+      btn_get_state.addEventListener('click', function()  { getState(); });
+
+      function configJSON(coordinates, draw, zero) {
+        console.log('converting coordinates: ' + coordinates);
+        var config_json = {'bx':'{}', 'by':'{}', 'd':String(draw), 'cb':String(false), 'zero':String(zero)};
+        var bx = '{'; var by = '{';
+        //parse coordinates, set bx and by
+        let reg = /\(\s?(-?\d+)\s?,\s?(-?\d+)\s?\)/g;  //looking for a list (x1, y1)(x2, y2)
+        let match;
+        while (match = reg.exec(coordinates)) {
+          bx += match[1] + ',';
+          by += match[2] + ',';
+        }
+
+        config_json.bx = bx + '}';
+        config_json.by = by + '}';
+
+        postConfig(config_json);
+      }
+
+      function postConfig(config_json) {
+        console.log('Posting config');
+        console.log(config_json);
+        var config_str = 'config=' + JSON.stringify(config_json);
+        console.log(config_str);
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+               var resp = xhttp.responseText;
+               console.log(resp);
+               last_config = config_json;
+              document.getElementById('last_config').innerText = JSON.stringify(last_config);
+            }
+        };
+        xhttp.open('POST', '/set_config', true);
+        xhttp.send(config_str);
+      }
+
+      function getState() {
+        console.log('Getting state');
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              console.log("Receieved new state");
+              var resp = xhttp.responseText;
+              console.log(resp);
+              last_state = resp;
+              document.getElementById('last_state').innerText = JSON.stringify(last_state);
+            }
+        };
+        xhttp.open('GET', '/get_state', true);
+        xhttp.send();
+      }
+    </script>
+
+  </body>
+</html>
