@@ -174,7 +174,7 @@ void updateConfig(String conf) {
       int num = 0;
 
       Serial.println("Adding new coords to buffer");
-      while (buffer_add_x.charAt(index_x) != '}' && buffer_add_y.charAt(index_y) != '}') {
+      while (buffer_add_x.charAt(index_x) != '}' && buffer_add_y.charAt(index_y) != '}' && (num < 1000)) {
         int next_index_x = buffer_add_x.indexOf(",", index_x);
         int next_x = buffer_add_x.substring(index_x, next_index_x).toInt();
         index_x = next_index_x + 1;
@@ -184,12 +184,13 @@ void updateConfig(String conf) {
         index_y = next_index_y + 1;
 
         pos new_pos = {next_x, next_y};
-        addToBuffer(new_pos);
+        addToBuffer(&new_pos);
 
         num++;
-        if (num % 20) { Serial.print("."); }
+        if (num % 10 == 0) { Serial.print("."); }
       }
-      Serial.println("\nAdded new coords to buffer");
+      int buf_size = getBufferSize();
+      Serial.println("\nAdded new coords to buffer, size = " + buf_size);
     }
   }
   else {

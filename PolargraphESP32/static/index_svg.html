@@ -27,15 +27,19 @@
         <p id="last_state"></p>
       </div>
 
-      <div id="svg_input" >
+      <div id="svg_input">
         <div>
           <h2>SVG Input</h2>
           <label for="svgfile">Choose svg file to upload</label>
           <input type="file" id="svgfile" name="svgfile" accept=".svg">
-          <button onclick="convert_svg()">Load SVG</button>
+          <button id="btn_load_svg">Load SVG</button>
         </div>
         <button id="btn_start_svg">Start</button>
-        <input id="distance_btwn" type="number" placeholder="5" value="5" >
+        <label for="svg_scale">Scale SVG</label>
+        <input id="svg_scale" type="number" placeholder="1" value="1" style="width:3em;" >
+        <label for="distance_btwn">Distance Between Path Points</label>
+        <input id="distance_btwn" type="number" placeholder="2" value="2" size="2" style="width:3em;" >
+        <button id="btn_reset_svg" onClick="window.location.reload();">Reset Input</button>
         <p>Original SVG object:</p>
         <div id="svg_container"><svg id="svg_obj" height="560" width="900" style="border: 1px solid;"></svg></div>
       </div>
@@ -59,6 +63,7 @@
       var btn_zero = document.getElementById('btn_zero');
       var btn_get_state = document.getElementById('btn_get_state');
       var btn_start_svg = document.getElementById('btn_start_svg');
+      var btn_load_svg = document.getElementById('btn_load_svg');
 
       //SVG Tool
       var x_max = 450;
@@ -74,28 +79,29 @@
         postConfig(config_json);
       });
       btn_start_svg.addEventListener('click', function(){
-        path_step = document.getElementById('distance_btwn').value;
         var config_json = configJSON_XY(coordinatesX, coordinatesY, true, false);
         postConfig(config_json);
       });
+      btn_load_svg.addEventListener('click', function()   { convert_svg();   });
       btn_stop.addEventListener('click', function()       { postConfig(configJSON('', false, false)); });
       btn_zero.addEventListener('click', function()       { postConfig(configJSON('', false, true)); });
       btn_get_state.addEventListener('click', function()  { postConfig(getState()); });
+
 
       function configJSON(coordinates, draw, zero) {
         console.log('converting coordinates: ' + coordinates);
         var config_json = {'bx':'{}', 'by':'{}', 'd':String(draw), 'cb':String(false), 'zero':String(zero)};
         var bx = '{'; var by = '{';
         //parse coordinates, set bx and by
-        let reg = /\(\s?(-?\d+)\s?,\s?(-?\d+)\s?\)/g;  //looking for a list (x1, y1)(x2, y2)
-        let match;
+        var reg = /\(\s?(-?\d+)\s?,\s?(-?\d+)\s?\)/g;  //looking for a list (x1, y1)(x2, y2)
+        var match;
         while (match = reg.exec(coordinates)) {
           bx += match[1] + ',';
           by += match[2] + ',';
         }
 
-        config_json.bx = bx + '}';
-        config_json.by = by + '}';
+        config_json.bx = bx + ',}';
+        config_json.by = by + ',}';
         return config_json;
 
       }
@@ -103,8 +109,8 @@
       function configJSON_XY(x, y, draw, zero) {
         console.log('converting coordinates');
         var config_json = {'bx':'{}', 'by':'{}', 'd':String(draw), 'cb':String(false), 'zero':String(zero)};
-        config_json.bx = '{' + x + '}';
-        config_json.by = '{' + y + '}';
+        config_json.bx = '{' + x + ',}';
+        config_json.by = '{' + y + ',}';
         return config_json;
       }
 
@@ -152,7 +158,6 @@
           var svgfile = input_svg();
           if (svgfile !== 0) {
             var svg_obj = read_svg(svgfile);
-
           }
       }
 
@@ -178,12 +183,14 @@
           svg_container.innerHTML = svg_data;
           var svg_obj = svg_container.getElementsByTagName("svg")[0];
           console.log(svg_obj);
+
           svg_obj.setAttribute('viewBox', '-' + x_max + ' -' + y_max + ' ' + 2*x_max + ' ' + 2*y_max);
           svg_obj.setAttribute('width', 2*x_max);
           svg_obj.setAttribute('height', 2*y_max);
           svg_obj.style.border = "1px solid";
           svg_obj.id='svg_obj';   //it changes the id in the html doc so now we can't access it in future, this doesnt fix it though
           svg_container.innerHTML = svg_obj.outerHTML;
+
           svg_to_coord(svg_obj);
           draw_canvas(coordinatesX, coordinatesY, 'svg_canvas');
           display_coords(coordinatesX, coordinatesY);
@@ -204,17 +211,39 @@
         console.log(svg_paths);
         console.log(svg_paths[0]);
 
+        path_step = document.getElementById('distance_btwn').value;
+        var path_scale = document.getElementById('svg_scale').value;
+
+        console.log('path step: ' + String(path_step) + ', path scale: ' + String(path_scale));
+
         var i;
         for (i = 0; i < svg_paths.length; i++) {                   //loop through each path tag
           var path_len = svg_paths[i].getTotalLength();
           console.log('length = ' + path_len);
 
+          var minX = x_max; var minY = y_max; var maxX = -x_max; var maxY = -y_max;
+
           var l;
-          for (l = 0; l < path_len; l += path_step) {
+          for (l = 0; l < path_len; l += 2) {
             var coord = svg_paths[i].getPointAtLength(l);
-            coordinatesX.push(Math.round(coord.x));
-            coordinatesY.push(Math.round(-coord.y));
+            var x = coord.x;
+            var y = -coord.y;
+            coordinatesX.push(x);
+            coordinatesY.push(y);
+            if (x < minX) {minX = x;}
+            else if (x > maxX) {maxX = x;}
+            else if (y < minY) {minY = y;}
+            else if (y > maxY) {maxY = y;}
           }
+        }
+
+        //center the svg
+        var width2 = (maxX - minX) / 2;
+        var height2 = (maxY - minY) / 2;
+
+        for (var i = 0; i < coordinatesX.length; i++) {
+          coordinatesX[i] = Math.round((coordinatesX[i] - width2) * path_scale);
+          coordinatesY[i] = Math.round((coordinatesY[i] + height2) * path_scale);
         }
       }
 

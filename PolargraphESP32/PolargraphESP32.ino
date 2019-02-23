@@ -23,7 +23,8 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
 
-  setupWiFi(WIFI_MODE, ssid, pass);   //Access Point or Station
+  setupWiFiAuto(ssid, pass);
+  //setupWiFi(WIFI_MODE, ssid, pass);   //Access Point or Station
   setupWebServer();                   //Set up the Web Server
   next_update = millis();
 

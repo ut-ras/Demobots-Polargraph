@@ -41,7 +41,7 @@ struct pos {
 void setupPolargraph();
 bool loopPolargraph();      //returns true if at a good stopping point to check IoT, like the end of a drawing or not drawing
 
-bool addToBuffer(pos pos_new);
+bool addToBuffer(pos * pos_new);
 void clearBuffer();
 int getBufferSize();
 

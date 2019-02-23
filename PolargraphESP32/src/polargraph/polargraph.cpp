@@ -1,9 +1,8 @@
-#include <QueueList.h>
 #include <AccelStepper.h>
 #include <MultiStepper.h>
 #include "polargraph.h"
 
-QueueList <pos> pos_buffer;
+QueueHandle_t pos_buffer;
 
 AccelStepper stepperR(1, 12, 13);      //rstep = gpio12, rdir = gpio13
 AccelStepper stepperL(1, 4, 5);        //lstep = gpio4, ldir = gpio5
@@ -31,7 +30,7 @@ bool isValidPos(pos new_pos);
 
 
 void setupPolargraph() {
-  pos_buffer.setPrinter(Serial);
+  pos_buffer = xQueueCreate(1500, sizeof(pos));
 
   stepperL.setMaxSpeed(baseSpeed);
   //stepperL.setAcceleration(accel);
@@ -50,8 +49,6 @@ void setupPolargraph() {
 
   left_length = getLeftStringLength(pos_current);
   right_length = getRightStringLength(pos_current);
-
-  pos_buffer.setPrinter(Serial);
 }
 
 
@@ -64,31 +61,32 @@ bool loopPolargraph() {
   if (!steppers.run()) {
     Serial.println("Arrived at pos x=" + String(pos_current.x) + " y=" + String(pos_current.y) + " l_steps=" + String(stepperL.currentPosition()) + " r_steps=" + String(stepperR.currentPosition()));
 
-    //is the buffer done
-    if (pos_buffer.isEmpty()) {
+    pos nextpos;
+    pos * nextpos_pt = &nextpos;
+    if(xQueueReceive(pos_buffer, &nextpos, (TickType_t) 0) != errQUEUE_EMPTY)  {
+      setPos(nextpos);
+    }
+    else {
       isDrawing = false;
       return true;
     }
-    else {
-      setPos(pos_buffer.pop());
-    }
+
   }
   //Serial.println("Currently at l_steps=" + String(stepperL.currentPosition()) + " r_steps=" + String(stepperR.currentPosition()));
   return false;
 }
 
 
-bool addToBuffer(pos pos_new) {
+bool addToBuffer(pos * pos_new) {
   //Serial.println("Adding to buffer: x=" + String(pos_new.x) + ", y=" + String(pos_new.y));    //beware of overloading Serial buffer
-  pos_buffer.push(pos_new);
+  //pos_buffer.push(pos_new);
+  xQueueSend(pos_buffer, pos_new, (TickType_t) 0);
   return true;
 }
 
 void clearBuffer() {
   Serial.println("Clearing Buffer");
-  while(!pos_buffer.isEmpty()) {
-    Serial.print(pos_buffer.pop().toString() + " ");
-  }
+  xQueueReset(pos_buffer);
 }
 
 void resetPos() {
@@ -177,7 +175,7 @@ double getDistance(pos p1, pos p2) {
 
 /* Getters and Setters */
 
-int getBufferSize() { return pos_buffer.count(); }
+int getBufferSize() { return /*pos_buffer.count()*/ uxQueueMessagesWaiting(pos_buffer); }
 
 pos getCurrentPos() { return pos_current; }
 

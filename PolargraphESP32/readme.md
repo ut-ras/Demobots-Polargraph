@@ -6,7 +6,6 @@ Built on arduino-esp32, which runs in FreeRTOS.</br>
 ## Arduino Libraries
 ESP32-Arduino</br>
 AccelStepper</br>
-QueueList</br>
 
 
 ## Hardware
