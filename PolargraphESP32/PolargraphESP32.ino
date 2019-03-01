@@ -32,17 +32,35 @@ void setup() {
   //Serial.println("Web server at " + webServerPath);
 
   setupPolargraph();
+  xTaskCreate(&vPolargraphTaskCode,"polargraphTask",500,(void*)1,4,NULL);
+  xTaskCreate(&vWebserverTaskCode,"webserverTask",500,(void*)1,3,NULL);
+
 
 }
 
 void loop() {
   //draw a line between two points if available/ enabled
   //returns true if at a good stopping point to check webserver
-  if (loopPolargraph()) {
+  /*if (loopPolargraph()) {
     long t_curr = millis();
     if (t_curr > next_update) {
       loopWebServer();    //check the web server for updates
       next_update = t_curr + MIN_UPDATE_MS;
     }
+  }*/
+}
+
+void vPolargraphTaskCode(void * pvParameters){
+  configASSERT( ( (uint32_t) pvParamters) == 1);
+  for(;;){
+      loopPolargraph();
   }
 }
+
+void vWebserverTaskCode(void * pv Parameters){
+  configASSERT( ( (uint32_t) pvParamters) == 1);
+  for(;;){
+      loopWebserver();
+  }
+}
+

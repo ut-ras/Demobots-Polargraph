@@ -11,7 +11,7 @@ MultiStepper steppers;
 
 /* Polargraph status */
 pos pos_current = {0, 0};     //current position of our drawing instrument
-double baseSpeed = 30.0 * STEP_MULT;
+double baseSpeed = 30.0 * STEP_MULT;    
 //double accel = 90.0;
 boolean isDrawing = false;
 
