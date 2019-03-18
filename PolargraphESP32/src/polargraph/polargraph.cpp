@@ -11,8 +11,8 @@ MultiStepper steppers;
 
 /* Polargraph status */
 pos pos_current = {0, 0};     //current position of our drawing instrument
-double baseSpeed = 30.0 * STEP_MULT;    
-//double accel = 90.0;
+double baseSpeed = 30.0 * STEP_MULT;
+//double accel = 0;
 boolean isDrawing = false;
 
 double left_length = 0;
@@ -37,9 +37,6 @@ void setupPolargraph() {
 
   stepperR.setMaxSpeed(baseSpeed);
   //stepperR.setAcceleration(accel);
-
-  //stepperL.moveTo(0);
-  //stepperR.moveTo(0);
 
   steppers.addStepper(stepperL);
   steppers.addStepper(stepperR);

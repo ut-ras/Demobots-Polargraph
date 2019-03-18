@@ -9,6 +9,10 @@
  * Create Task https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/system/freertos.html
  * Run Time stats https://www.freertos.org/a00021.html#vTaskGetRunTimeStats
  * Watchdog Timer https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/system/wdts.html
+ *
+ * delay() wraps around the FreeRTOS vTaskDelay(), which implements blocking
+ *    If you delay() a thread, the Scheduler will not give it a timeslice until
+ *    its delay is up, so other threads are free to run.
  */
 
 #include <Arduino.h>
@@ -28,32 +32,38 @@
 #endif
 
 
+#define STACK_SIZE 2000     //words
+#define PRI_POLARGRAPH 2
+#define PRI_WEBSERVER 2
+
+
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(115200);
 
-  //setupWiFiAuto(ssid, pass);
-  setupWiFi(WIFI_MODE, ssid, pass);   //Access Point or Station
+  setupWiFi(WIFI_MODE, ssid, pass);   //Access Point (AP), Station (STA), or Auto (AUTO)
   setupWebServer();                   //Set up the Web Server
   setupPolargraph();                  //Set up the Polargraph
 
   //debugPrint("WiFi mode=" + String(WIFI_MODE) + ", ssid = " + String(ssid) + ", pass = " + String(pass));
   //debugPrint("Web server at " + webServerPath);
 
-  xTaskCreatePinnedToCore(&vPolargraphTaskCode,"polargraphTask", 2000, NULL, 2, NULL, 1);
-  xTaskCreatePinnedToCore(&vWebserverTaskCode,"webserverTask", 2000, NULL, 2, NULL, 1);
+  //start new threads for the polargraph and the webserver
+  //The priority of the arduino main thread (setup/ loop) is 1
+  xTaskCreatePinnedToCore(&vPolargraphTaskCode,"polargraphTask", STACK_SIZE, NULL, PRI_POLARGRAPH, NULL, 1);
+  xTaskCreatePinnedToCore(&vWebserverTaskCode,"webserverTask", STACK_SIZE, NULL, PRI_WEBSERVER, NULL, 1);
 
-  //remove the main arduino loop thread
+  //remove the main arduino thread (setup/ loop)
   vTaskDelete(NULL);
 }
 
 void loop() {
   //this thread has been stopped in setup()
-
+  /*
   debugPrint("loop start");
   delay(1000);
   debugPrint("loop end");
   delay(1000);
+  */
 }
 
 
