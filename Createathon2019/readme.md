@@ -1,5 +1,5 @@
-# Creatathon Polargraph 2019
-Large drawing machine for Creatathon 2019. Includes a wireless device to lift and place the marker. Software based on the [UT Robotics and Automation Society Polargraph](https://github.com/ut-ras/Demobots-Polargraph-IOT/tree/master/PolargraphESP32). </br>
+# Createathon Polargraph 2019
+Large drawing machine for Createathon 2019. Includes a wireless device to lift and place the marker. Software based on the [UT Robotics and Automation Society Polargraph](https://github.com/ut-ras/Demobots-Polargraph-IOT/tree/master/PolargraphESP32). </br>
 
 
 ## Hardware
