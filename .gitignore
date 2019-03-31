@@ -1,4 +1,7 @@
 
+# zip libs
+*.zip
+
 # compiled python files
 *.pyc
 *__pycache__/
