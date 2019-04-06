@@ -113,7 +113,7 @@
         var config_json = {'bx':'{}', 'by':'{}', 'd':String(draw), 'cb':String(false), 'zero':String(zero)};
         var bx = '{'; var by = '{';
         //parse coordinates, set bx and by
-        var reg = /\(\s?([\duUdD]?-?\d+)\s?,\s?([\duUdD]?-?\d+)\s?\)/g;  //looking for a list (x1, y1)(x2, y2)
+        var reg = /\(\s?([\duUdD]?-?\d*)\s?,\s?([\duUdD]?-?\d*)\s?\)/g;  //looking for a list (x1, y1)(x2, y2)
         var match;
         while (match = reg.exec(coordinates)) {
           bx += match[1] + ',';
@@ -261,22 +261,28 @@
           console.log('length = ' + path_len);
 
           var l;
+          var first_x = 0;
+          var first_y = 0;
           //parse current path in steps
           for (l = 0; l < path_len; l += path_step) {
+            //trace along the path to get X and Y coord
+            var coord = svg_paths[i].getPointAtLength(l);
+            var x = coord.x;
+            var y = -coord.y;
+
             //lift and place marker for first coordinate in path
             if (l == 0) {
               coordinatesX.push('u');
               coordinatesY.push('u');
+              first_x = x;
+              first_y = y;
             }
             else if (l == path_step) {
               coordinatesX.push('d');
               coordinatesY.push('d');
             }
 
-            //trace along the path to get X and Y coord
-            var coord = svg_paths[i].getPointAtLength(l);
-            var x = coord.x;
-            var y = -coord.y;
+
             coordinatesX.push(x);
             coordinatesY.push(y);
 
@@ -286,6 +292,8 @@
             else if (y < minY) {minY = y;}
             else if (y > maxY) {maxY = y;}
           }
+          coordinatesX.push(first_x);
+          coordinatesY.push(first_y);
         }
 
         //center the svg based on max and min for X and Y

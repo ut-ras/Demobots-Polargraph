@@ -1,13 +1,35 @@
 #ifndef __POLARGRAPH_H__
 #define __POLARGRAPH_H__
 
+//#define RAS_POLARGRAPH
+#define CREATEATHON_POLARGRAPH
+
 /* Measurements (mm)*/
+
+#ifdef RAS_POLARGRAPH
 #define X_MAX 515
 #define Y_MAX 355
 #define STEP_MULT 8
-#define PULLEY_RADIUS 43  //update this
+#define PULLEY_RADIUS 43
 #define PULLEY_CIRC (2 * PULLEY_RADIUS * PI)
 #define STEPS_PER_ROT 200 * STEP_MULT
+#define MARKER_WAIT_MS 0
+#define MOVE_SPEED 40.0
+#endif
+
+#ifdef CREATEATHON_POLARGRAPH
+#define X_MAX 380
+#define Y_MAX 500
+#define STEP_MULT 2
+#define PULLEY_RADIUS 7.5
+#define PULLEY_CIRC (2 * PULLEY_RADIUS * PI)
+#define STEPS_PER_ROT 200 * STEP_MULT
+#define MARKER_WAIT_MS 3000
+#define MOVE_SPEED 90.0
+#endif
+
+
+
 
 //steps = distance * mm_to_steps_pulley
 #define mm_to_steps_pulley double(STEPS_PER_ROT) / double(PULLEY_CIRC);

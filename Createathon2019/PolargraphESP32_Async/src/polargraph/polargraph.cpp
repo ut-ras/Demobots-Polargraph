@@ -14,7 +14,7 @@ MultiStepper steppers;
 
 /* Polargraph status */
 pos pos_current = {0, 0, STAY};     //current position of our drawing instrument
-double baseSpeed = 30.0 * STEP_MULT;
+double baseSpeed = MOVE_SPEED * STEP_MULT;
 boolean isDrawing = false;
 
 double left_length = 0;
@@ -24,7 +24,6 @@ long right_steps = 0;
 
 /* Polargraph Helper Functions */
 
-#define MARKER_WAIT_MS 1000
 
 double getLeftStringLength(pos pos_new);
 double getRightStringLength(pos pos_new);
