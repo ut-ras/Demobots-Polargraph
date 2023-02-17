@@ -4,7 +4,7 @@ UT Austin's R.A.S. Demobots built an IoT drawing machine.
 This branch is for updates/upgrades made to Polargraph in Spring of 2023, to eventually be merged into master branch, with older the master (last updated in 2019) archived. </br>
 </br>
 
-![Polargraph Image](img/polargraph.gif)
+![Polargraph Image](img/02-2023polargraph.gif)
 
 ## PolargraphESP32
 Runs on an ESP32 in FreeRTOS. Hosts a web server and control interface on the device, and can either connect to an access point or deploy one.
