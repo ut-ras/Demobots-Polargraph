@@ -1,4 +1,3 @@
-# {ARCHIVED - 2023 VERSION IS WIP}
 # Demobots Polargraph IOT 
 UT Austin's R.A.S. Demobots built an IoT drawing machine, with a few different software versions.</br>
 </br>
