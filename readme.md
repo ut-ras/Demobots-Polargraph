@@ -1,12 +1,10 @@
-# {ARCHIVED - 2023 VERSION IS WIP}
-# Demobots Polargraph IOT 
-UT Austin's R.A.S. Demobots built an IoT drawing machine, with a few different software versions.</br>
+# Demobots Polargraph - Spring 2023
+UT Austin's R.A.S. Demobots built an IoT drawing machine.
+
+This branch is for updates/upgrades made to Polargraph in Spring of 2023, to eventually be merged into master branch, with older the master (last updated in 2019) archived. </br>
 </br>
 
 ![Polargraph Image](img/polargraph.gif)
-
-## PolargraphArduinoGIOT
-Runs on an ESP8266. Uses Google Cloud IOT device manager for communication, and connects to an AppEngine webserver in polargraph_appengine.
 
 ## PolargraphESP32
 Runs on an ESP32 in FreeRTOS. Hosts a web server and control interface on the device, and can either connect to an access point or deploy one.
