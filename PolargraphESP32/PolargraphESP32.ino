@@ -40,7 +40,7 @@
 void setup() {
   Serial.begin(115200);
 
-  setupWiFi(WIFI_MODE, ssid, pass);   //Access Point (AP), Station (STA), or Auto (AUTO)
+  setupWiFi("AP", ssid, pass);   //Access Point (AP), Station (STA), or Auto (AUTO)
   setupWebServer();                   //Set up the Web Server
   setupPolargraph();                  //Set up the Polargraph
 
