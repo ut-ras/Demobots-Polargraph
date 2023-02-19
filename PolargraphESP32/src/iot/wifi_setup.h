@@ -38,30 +38,7 @@ IPAddress subnet(255, 255, 0, 0);
  * AP = create a WiFi access point with  name ssid
  * AUTO = STA if it finds the network, AP if it does not
  */
-void setupWiFi(String mode, const char * _ssid, const char * _pass) {
-  if (mode.equals("AP")) {
-    //Turn on Access Point
-    WiFi.softAP(_ssid, _pass);
-    ip = WiFi.softAPIP();
-  }
-  else if (mode.equals("STA")) {
-    //Connect to a WiFi network
-    WiFi.mode(WIFI_STA);
-    WiFi.begin(_ssid, _pass);
-    while (WiFi.status() != WL_CONNECTED) {
-      delay(500);
-      yield();
-      //Serial.print(".");
-    }
-    ip = WiFi.localIP();
-  }
-  else {
-    setupWiFiAuto(_ssid, _pass);
-  }
-}
-
-
-/* setupWiFiAuto
+ /* setupWiFiAuto
  * STA if it finds the network, AP if it does not
  */
 void setupWiFiAuto(const char * _ssid, const char * _pass) {
@@ -96,6 +73,30 @@ void setupWiFiAuto(const char * _ssid, const char * _pass) {
 
   Serial.println("WiFi mode=" + mode + ", ip=" + String(WiFi.localIP()) + ", ssid = " + String(ssid) + ", pass = " + String(pass));
 }
+void setupWiFi(String mode, const char * _ssid, const char * _pass) {
+  if (mode.equals("AP")) {
+    //Turn on Access Point
+    WiFi.softAP(_ssid, _pass);
+    ip = WiFi.softAPIP();
+  }
+  else if (mode.equals("STA")) {
+    //Connect to a WiFi network
+    WiFi.mode(WIFI_STA);
+    WiFi.begin(_ssid, _pass);
+    while (WiFi.status() != WL_CONNECTED) {
+      delay(500);
+      yield();
+      //Serial.print(".");
+    }
+    ip = WiFi.localIP();
+  }
+  else {
+    setupWiFiAuto(_ssid, _pass);
+  }
+}
+
+
+
 
 
 
