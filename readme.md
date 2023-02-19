@@ -32,7 +32,7 @@ The deprecated PolargraphArduinoGIOT version is included [here](DEPRECATED_FILES
 Runs on an ESP8266. Uses Google Cloud IOT device manager for communication, and connects to an AppEngine webserver in polargraph_appengine.
 
 ## Electrical
- * [ESP32 Pico Kit](https://www.mouser.com/ProductDetail/Espressif-Systems/ESP32-PICO-KIT?qs=MLItCLRbWsyoLrlknFRqcQ%3D%3D)
+ * [ESP32-PICO-KIT V4 / V4.1](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/hw-reference/esp32/get-started-pico-kit.html#get-started-pico-kit-v4-board-front)
  * 2x [NEMA 17 2A Stepper Motors](https://www.amazon.com/Stepper-Bipolar-4-lead-Connector-Printer/dp/B00PNEQKC0/ref=sr_1_4?ie=UTF8&qid=1517537888&sr=8-4&keywords=nema+17+stepper+motor&refinements=p_72%3A2661618011)
  * 2x [A4988 Pololu Stepper Drivers](https://www.pololu.com/product/1182)
  * [5V, 5A Step-Down Voltage Regulator D24V50F5](https://www.pololu.com/product/2851)
@@ -40,15 +40,19 @@ Runs on an ESP8266. Uses Google Cloud IOT device manager for communication, and 
  * 100uF, 50V Capacitor
  * Breadboard with Jumpers
 
-### Breadboard Diagram
-Note that the MS1 and MS2 pins of each A4988 Stepper Driver are both 5V high, this sets the stepper motors to eighth step, be sure to refer to the [A4988 pinout](Electrical/A4988_pinout) as needed
+### Circuit Diagram 
 
-The exact order of the stepper driver output wires depends on the stepper motor used, refer to the [A4988 pinout](Electrical/A4988_pinout) as needed.
+*WIP*
+
+### Breadboard Diagram
+Note that the MS1 and MS2 pins of each A4988 Stepper Driver are both 5V high, this sets the stepper motors to eighth step, refer to the [A4988 pinout](Electrical/A4988_pinout.png) as needed.
+
+The exact order of the stepper driver output wires depends on the stepper motor used, refer to the [A4988 pinout](Electrical/A4988_pinout.png) as needed.
 </br>
 
 ![connections](Electrical/breadboard_diagram.png)
 
-
+*An ESP32-PICO-KIT Fritzing part doesn't exist as of writing, the other ESP32 board was used just to illustrate the pin connections.*
 
 
 ## Upgrades In the Works
