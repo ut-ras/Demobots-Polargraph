@@ -47,7 +47,7 @@ Here's how (mostly) everything is connected, notice that the GPIO## busses coore
 * ESP32's 3.3V pin can be used for the A4988's VDD
 
 
-![connections](img/connections-1.png)
+![connections](img/Polargraph_bb.png)
 
 
 
