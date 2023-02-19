@@ -1,10 +1,10 @@
-# Demobots Polargraph IoT
+# Demobots Polargraph (*under new management!*)
 ![Polargraph GIF](Demos/02-2023polargraph.gif)
 
 
 Automated Drawing Robot originally built by the 2018-2019 Demobots comittee.
 
-### [For current demonstration instructions, click here!](#demonstration-instructions)
+### [For current demonstration instructions, click here!](Demos/readme.md)
 
 Demobots is currently working on improving and adding to features to Polargraph (as of 2023).
 
