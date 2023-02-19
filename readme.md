@@ -23,11 +23,11 @@ More detailed user instructions for demonstrations will follow soon.</br>
 
 (Both require the [AccelStepper](https://www.airspayce.com/mikem/arduino/AccelStepper/index.html) library)
 
-### PolargraphESP32 (Maintained)
+### [PolargraphESP32](PolargraphESP32) (Maintained)
 Runs on an ESP32 in FreeRTOS. Hosts a web server and control interface on the device, and can either connect to an access point or deploy one. Allows user to upload SVG drawing for robot to draw.
 
-### {Deprecated} PolargraphArduinoGIOT 
-The deprecated PolargraphArduinoGIOT version is included here, but hasn't been touched since 2019, feel free to look into it. 
+### {DEPRECATED} PolargraphArduinoGIOT 
+The deprecated PolargraphArduinoGIOT version is included [here](DEPRECATED FILES/PolargraphArduinoGIOT), but hasn't been touched since 2019, feel free to look into it. 
 Runs on an ESP8266. Uses Google Cloud IOT device manager for communication, and connects to an AppEngine webserver in polargraph_appengine.
 
 ## Electrical
@@ -42,7 +42,9 @@ Runs on an ESP8266. Uses Google Cloud IOT device manager for communication, and 
 ### Breadboard Diagram
 Note that the MS1 and MS2 pins of each A4988 Stepper Driver are both 5V high, this sets the stepper motors to eighth step, be sure to refer to the [A4988 pinout](Electrical/A4988_pinout) as needed
 
-The exact order of the stepper driver output wires depends on the stepper motor used, refer to the [A4988 pinout](Electrical/A4988_pinout) as needed
+The exact order of the stepper driver output wires depends on the stepper motor used, refer to the [A4988 pinout](Electrical/A4988_pinout) as needed.
+</br>
+
 ![connections](Electrical/breadboard_diagram.png)
 
 
