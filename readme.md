@@ -40,7 +40,15 @@ Runs on an ESP8266. Uses Google Cloud IOT device manager for communication, and 
  * Breadboard with Jumpers
 
 ### Connections
-![Circuit Diagram](img/02-2023polargraph.gif)
+Here's how (mostly) everything is connected, notice that the GPIO## busses coorespond to their associated GPIO pins on the ESP32.
+
+#### Not shown here: 
+* 5V bus is connected to the ESP32's 5V pin
+* ESP32's 3.3V pin can be used for the A4988's VDD
+
+
+![connections](img/connections-1.png)
+
 
 
 
