@@ -1,5 +1,5 @@
 # Demobots Polargraph IoT
-![Polargraph GIF](img/02-2023polargraph.gif)
+![Polargraph GIF](Demos/02-2023polargraph.gif)
 
 
 Automated Drawing Robot originally built by the 2018-2019 Demobots comittee.
@@ -30,7 +30,7 @@ Runs on an ESP32 in FreeRTOS. Hosts a web server and control interface on the de
 The deprecated PolargraphArduinoGIOT version is included here, but hasn't been touched since 2019, feel free to look into it. 
 Runs on an ESP8266. Uses Google Cloud IOT device manager for communication, and connects to an AppEngine webserver in polargraph_appengine.
 
-## Electrical Hardware:
+## Electrical
  * [ESP32 Pico Kit](https://www.mouser.com/ProductDetail/Espressif-Systems/ESP32-PICO-KIT?qs=MLItCLRbWsyoLrlknFRqcQ%3D%3D)
  * 2x [NEMA 17 2A Stepper Motors](https://www.amazon.com/Stepper-Bipolar-4-lead-Connector-Printer/dp/B00PNEQKC0/ref=sr_1_4?ie=UTF8&qid=1517537888&sr=8-4&keywords=nema+17+stepper+motor&refinements=p_72%3A2661618011)
  * 2x [A4988 Pololu Stepper Drivers](https://www.pololu.com/product/1182)
@@ -39,15 +39,11 @@ Runs on an ESP8266. Uses Google Cloud IOT device manager for communication, and 
  * 100uF, 50V Capacitor
  * Breadboard with Jumpers
 
-### Connections
-Here's how (mostly) everything is connected, notice that the GPIO## busses coorespond to their associated GPIO pins on the ESP32.
+### Breadboard Diagram
+Note that the MS1 and MS2 pins of each A4988 Stepper Driver are both 5V high, this sets the stepper motors to eighth step, be sure to refer to the [A4988 pinout](Electrical/A4988_pinout) as needed
 
-#### Not shown here: 
-* 5V bus is connected to the ESP32's 5V pin
-* ESP32's 3.3V pin can be used for the A4988's VDD
-
-
-![connections](img/Polargraph_bb.png)
+The exact order of the stepper driver output wires depends on the stepper motor used, refer to the [A4988 pinout](Electrical/A4988_pinout) as needed
+![connections](Electrical/breadboard_diagram.png)
 
 
 
