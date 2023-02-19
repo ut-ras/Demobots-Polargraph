@@ -19,7 +19,7 @@ More detailed user instructions for demonstrations will follow soon.</br>
  
 # How does it work?
 
-## Codebases:
+## Codebase
 
 (Both require the [AccelStepper](https://www.airspayce.com/mikem/arduino/AccelStepper/index.html) library)
 
@@ -27,7 +27,7 @@ More detailed user instructions for demonstrations will follow soon.</br>
 Runs on an ESP32 in FreeRTOS. Hosts a web server and control interface on the device, and can either connect to an access point or deploy one. Allows user to upload SVG drawing for robot to draw.
 
 ### {DEPRECATED} PolargraphArduinoGIOT 
-The deprecated PolargraphArduinoGIOT version is included [here](DEPRECATED FILES/PolargraphArduinoGIOT), but hasn't been touched since 2019, feel free to look into it. 
+The deprecated PolargraphArduinoGIOT version is included [here](DEPRECATED_FILES/PolargraphArduinoGIOT), but hasn't been touched since 2019, feel free to look into it. 
 Runs on an ESP8266. Uses Google Cloud IOT device manager for communication, and connects to an AppEngine webserver in polargraph_appengine.
 
 ## Electrical
