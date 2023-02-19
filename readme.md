@@ -4,6 +4,8 @@ Automated Drawing Robot originally built by the 2018-2019 Demobots comittee.
 
 Demobots is currently working on improving and adding to features to Polargraph (as of 2023).
 
+Contains 2 different codebases: PolargraphESP32 (maintained) and PolargraphArduinoGIOT (deprecated, but may be visited sometime in the future)
+
 ### Updates:
 
 Currently working on the PolargraphESP32 code, getting it to a more easy to use state. 
@@ -47,7 +49,7 @@ Runs on an ESP8266. Uses Google Cloud IOT device manager for communication, and 
 
 ## Current Contributors
 
- - Jake Tomczeszyn - Demobots Head (4jakers18 on the RAS Discord server) 
+ - Jake (Demobots Head) (4jakers18 on the RAS Discord server) 
 
 
  ##
