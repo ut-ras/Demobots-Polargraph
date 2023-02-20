@@ -13,7 +13,7 @@ Unscrew the backplate of the electrical harness to access the breadboard. (It ma
 
 **Verify that there are no loose connections and that** **everything is seated properly in the breadboard(s).** 
 
-**When doing this, refer to the circuit diagrams, breadboard diagram, pinouts, etc. **
+**When doing this, refer to the circuit diagrams, breadboard diagram, pinouts, etc.**
 
 ### Breadboard Diagram
 Note that the MS1 and MS2 pins of each A4988 Stepper Driver are both 5V high, this sets the stepper motors to eighth step, refer to the [A4988 pinout](../Electrical/A4988_pinout.png) as needed.
