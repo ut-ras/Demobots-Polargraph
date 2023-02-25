@@ -72,13 +72,13 @@ You should see a page that looks like this:
 Click on the button marked `Zero` to set the current position as the origin of the graph.
 
 
-Get a feel for the limits of the board, as the current code is weird and inconsistent. As of 02/25/23, the whiteboard attached is 35" by 24", with a usable area about half an inch less due to the tape. There also appears to be some sort of coded change to the Y-Max set in [polargraph.h](../PolargraphESP32/src/polargraph/polargraph.h) that cuts it down a bit. 
+Get a feel for the limits of the board, as the current code is weird and inconsistent. As of 02/25/23, the whiteboard attached is 35" by 24", with a usable area about half an inch less due to the tape. There also appears to be some sort of coded change to the Y-Max set in [polargraph.h](../PolargraphESP32/src/polargraph/polargraph.h) that cuts it down a bit. All four of the limits seem to get cut down by 10mm regardless.
 
 This all translates to the rough limits of:
 
 |X-Max| X-Min |Y-Max| Y-Min |
 |--|--|--|--|
-| 440 mm  | -440 mm  | (~) 300 mm| -350 mm|
+| 440 mm  | -440 mm  | (~) 300 mm| -340 mm|
 
 ### Points
 
@@ -117,6 +117,8 @@ When you're down with that drawing, or want to have something new on the board, 
 
 ***Don't*** click `Read SVG` while you already have a SVG loaded in. Having more than one at a time can result in bad paths. 
 
+See [Troubleshooting](troubleshooting) below if you're having issues.
+
 # ---WIP PAST HERE---
 
 
@@ -127,18 +129,35 @@ The vector to movement algohrithm is complicated, and to be honest, I'm no sure 
 
 - Only certain SVG's will work properly, they have to consist of vector paths only with a thickness of one pixel.
 - Don't use any "image to vector" converters online, its best to trace out the path of the drawing you want using Inkscape or a similar program.
-- Some of the 'Working' SVG files are still too big/small to be drawn properly in the current configuration. Resize them based on the notes below:
+- Some of the 'Working' SVG files are still too big/small to be drawn properly in the current configuration. Use them based on the notes below:
 
-#### Working SVG Files
+### Working SVG Files
 
 SVG's confirmed to work can be found [here](SVGs/WORKING)
-
+________________________________________________________
 [longhorn.svg](SVGs/WORKING/longhorn.svg)
 
-<img src="SVGs/WORKING/longhorn.svg" width="300">
+<img src="SVGs/WORKING/longhorn.svg">
 
 - Best SVG we have so far
-- Is fairly small by default, but not undrawable, you should be able to scale to 4-5ish 
+- Centered on origin well, but the drawing path starts at the tip of the right horn, so there will be an ugly travel line unless you tell it to move to that coordinate and erase the travel line before starting drawing. 
+- It is fairly small by default, but not undrawable, you should be able to scale to 5ish at the most, experiment with it.
+________________________________________________________
+[creeper.svg](SVGs/WORKING/creeper.svg)
+
+<img src="SVGs/WORKING/creeper.svg">
+
+- About the same as longhorn.svg in terms of sizing and centering, ugly travel path is smaller.
+- ***aww man***
+________________________________________________________
+
+
+
+
+
+
+
+
 
 
 
