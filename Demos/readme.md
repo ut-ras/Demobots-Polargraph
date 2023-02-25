@@ -113,7 +113,9 @@ This loads the drawing path, scroll down to see the preview windows, the top is 
 
 Click `Start Drawing` to start drawing! (who would've guessed?)
 
+When you're down with that drawing, or want to have something new on the board, click `Reset SVG` or refresh the page. 
 
+***Don't*** click `Read SVG` while you already have a SVG loaded in. Having more than one at a time can result in bad paths. 
 
 # ---WIP PAST HERE---
 
