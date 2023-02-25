@@ -66,7 +66,8 @@ On your device's wifi settings, disable any automatic reconnection to the ***ute
 
 You should see a page that looks like this:
 
-<img src="html.png" alt="HTML Page" width="700">
+<img src="html.png" alt="HTML Page" width="650">
+
 
 Click on the button marked `Zero` to set the current position as the origin of the graph.
 
