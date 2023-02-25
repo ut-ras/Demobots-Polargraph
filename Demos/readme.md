@@ -32,21 +32,21 @@ You'll notice the ESP32's red light come on, along with a quiet but noticable no
 
  *(Notice that when the Polargraph loses power, the steppers go limp and drop the gondola, we avoid that by placing the string of each winch hooked on the paper clip its next to.)*
 
- ## Changing Out Paper
+ ## Optional - Changing Out Paper 
 Get a piece/roll of large paper and cut it to your desired size, and either attach it to the board using the paperclips already on there, or by using tape. be sure to account for clearence with the winches when sizing your paper.
 
-After you've attached the paper, either measure or guestimate the exact center of the page and mark it with a dot using the marker. 
+After you've attached the paper, either measure or guestimate the exact center of the page and mark it with a dot using the marker. There are guide arrows on the top and the left of the whiteboard that point to the center of the usable area.
 
-Carefully and slowly, facing the board, manually adjust the winches (careful not to get anything tangled) such that the gondola's marker hole rest directly over the dot you marked. This is where we will tell Polargraph to set as the origin ("zero") of it's coordinate system. 
+Carefully and slowly, facing the board, manually adjust the winches (careful not to get anything tangled) such that the gondola's marker hole rest directly over the dot you marked. This is where we will tell Polargraph to set as the origin ("zero") of it's coordinate system. Double check that the gondola hole is exactly or as close as possible to the center.
 
-Now your marker in the gondola, and secure it using the breadtie on there. the portion of marker sticking through the hole should be roughly the same length of the diameter of the castors on the gondola
+Now place your marker ***(DRY ERASE ONLY)*** in the gondola, and secure it using the breadtie on there. the portion of marker sticking through the hole should be roughly the same length of the diameter of the castors on the gondola, the gondola should be resting on both the marker tip and the castors.
 
- ## Drawing
- On your device, be sure to have these instructions open/downloaded, as well as any SVG (Vector files) you'll want to upload to Polargraph to draw are saved on your device as well. 
+ ## Connecting
+ On your device, be sure to have these instructions open/downloaded, as well as any SVG (Vector files) you'll want to upload to Polargraph to draw.
 
 *The current Polargraph code can be finnicky about what SVG's it likes and which it doesn't like, so I've gone ahead and verified/prepared some good demonstration drawings:*
 
-[Click here for Demo SVG files.](SVGs)
+[Click here for working SVG files.](SVGs/WORKING)
 
 On your device's wifi settings, disable any automatic reconnection to the ***utexas*** wifi (or other public access points), this helps to avoid accidental disconnections.
 
@@ -60,10 +60,43 @@ On your device's wifi settings, disable any automatic reconnection to the ***ute
 **When you're connected to Polargraph's access point, you won't have internet access! Be sure to have everything you need before connecting.**
 
  ### Once connected, in your web browser, go to [192.168.4.1](http://192.168.4.1/)
+ 
+ 
+ ## Drawing
 
-You should see a webpage that looks like this:
+You should see a page that looks like this:
 
-![html](html.png)
+<img src="html.png" alt="HTML Page" width="700">
+
+Click on the button marked `Zero` to set the current position as the origin of the graph.
+
+### Points
+
+Get a feel for the limits of the board, as the current code is weird and inconsistent. As of 02/25/23, the whiteboard attached is 35" by 24", with a usable area about half an inch less due to the tape. There also appears to be some sort of coded change to the Y-Max set in [polargraph.h](../PolargraphESP32/src/polargraph/polargraph.h) that cuts it down a bit. 
+
+This all translates to the rough limits of:
+
+|X-Max| X-Min |Y-Max| Y-Min |
+|--|--|--|--|
+| 440 mm  | -440 mm  | (~) 300 mm| -350 mm|
+
+
+You can input `(x,y)` coordinates you want the gondola to travel to in the text box at the top.
+
+Press `Start` to start a movement. 
+
+Press `Stop` to pause a movement.
+
+To cancel a movement in progress, you will have to press `Stop` and reboot the ESP32 (Do this via pulling it's `GND` Jumper to avoid the gondola falling).
+
+You can chain together multiple points in sequence like this: `(x1,y1)(x2,y2)(x3,y3)` 
+
+(Remember that drawing straight lines is hard to do manually, as this uses a Bipolar coordinate system for the movement, so it makes arcs when traveling between points.) 
+
+To return to the origin, dont press `Zero`! This isn't a 3D Printer, it doesn't have any position feedback. Simply type `(0,0)` into the text box 
+
+
+
 
 
 # ---WIP---
