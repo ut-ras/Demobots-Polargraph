@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="193.74956mm"
+   height="40.491982mm"
+   viewBox="0 0 193.74956 40.491982"
+   version="1.1"
+   id="svg21575"
+   inkscape:version="1.2.2 (b0a84865, 2022-12-01)"
+   sodipodi:docname="longohornname.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview21577"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="1.2754104"
+     inkscape:cx="356.35588"
+     inkscape:cy="58.8046"
+     inkscape:window-width="1440"
+     inkscape:window-height="872"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs21572">
+    <linearGradient
+       id="linearGradient27126"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop27124" />
+    </linearGradient>
+    <rect
+       x="271.11703"
+       y="261.60416"
+       width="1160.5712"
+       height="385.27158"
+       id="rect21635" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient27126"
+       id="linearGradient27128"
+       x1="123.28916"
+       y1="161.96386"
+       x2="325.86027"
+       y2="161.96386"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-117.92659,-163.22881)">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458334)"
+       id="text21633"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:48px;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect21635);fill:#000000;stroke:#000000;stroke-width:2" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:5.93484px;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#bf5700;stroke:#bf5700;stroke-width:0.26458333;stroke-dasharray:none;fill-opacity:1;stroke-opacity:1"
+       x="122.32026"
+       y="165.39494"
+       id="text21641"
+       transform="scale(0.95648063,1.0454995)"><tspan
+         sodipodi:role="line"
+         id="tspan21639"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11.8697px;font-family:'Lucida Grande';-inkscape-font-specification:'Lucida Grande, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.26458333;stroke-dasharray:none;fill:#bf5700;fill-opacity:1;stroke:#bf5700;stroke-opacity:1"
+         x="122.32026"
+         y="165.39494">IEEE Robotics &amp; Automation Society</tspan></text>
+    <g
+       id="XMLID_1_"
+       transform="matrix(0.26458334,0,0,0.26458334,189.51699,180.36208)">
+	<path
+   fill="#bf5700"
+   d="m 174.991,2.329 c 0.059,0.631 -0.138,3.098 -2.367,3.039 -4.401,-0.118 -8.842,0.652 -13.162,1.757 -3.276,1.065 -6.414,3.453 -9.256,5.643 -6.136,4.756 -30.271,18.884 -28.948,18.569 -0.099,0.394 0.395,0.434 0.493,0.691 1.776,0.75 7.874,3.453 8.07,3.531 0.079,0.258 1.736,1.756 -0.513,3.849 -2.764,1.815 -6.038,3.118 -9.591,2.901 -4.833,-0.316 -10.872,-4.302 -10.557,-2.625 0,0 -0.196,8.703 -5.544,15.433 -2.625,3.314 -3.81,7.754 -3.83,12.194 -0.019,3.453 1.007,5.762 1.007,5.762 0.06,0.572 1.106,6.314 0.455,8.19 -0.356,1.006 -6.138,7.103 -7.913,6.886 -3.316,0.118 -7.303,0.276 -10.558,-0.1 L 82.56,87.971 C 74.43,81.952 75.772,80.157 75.712,77.987 75.613,73.604 78.1,70.704 77.666,66.226 77.508,62.377 75.93,58.766 74.43,55.569 c -2.151,-3.63 -4.164,-7.399 -4.913,-11.74 -0.415,-1.54 0,-3.02 -0.612,-4.46 -1.243,-0.927 -5.447,1.915 -7.5,2.369 -1.243,1.065 -6.058,0.236 -8.762,-0.553 -1.913,-0.769 -7.458,-2.96 -4.577,-5.446 V 35.561 C 50.434,34.003 56.65,31.832 56.65,31.221 40.35,23.386 20.4,8.863 17.973,7.62 16.948,7.322 8.562,5.091 3.608,5.645 2.503,5.368 1.103,5.664 0.412,4.46 -1.601,0.474 4.417,0.355 4.417,0.355 6.114,0.138 7.693,-0.079 9.667,0.157 v 0.079 c 15.51,0.02 31.317,16.734 50.892,21.667 2.427,0.612 5.17,1.264 7.656,0.06 2.329,-0.632 4.52,-1.421 6.907,-2.131 0.888,-0.256 3.078,-0.75 5.604,0.394 2.23,0.02 4.46,-0.631 5.447,-0.394 1.894,0.73 2.999,0.651 5.091,-0.277 2.21,0.71 5.368,0.454 6.197,0.277 1.774,-1.342 5.958,0.612 7.616,0.947 3.038,0.77 5.467,2.486 8.762,1.757 9.02,-2.052 17.444,-6.473 25.416,-11.446 4.795,-2.723 9.867,-6.274 15.116,-8.604 h 0.079 c 3.985,-1.598 8.88,-2.25 13.479,-2.487 1.419,0.101 5.839,0.14 7.062,2.33 z"
+   id="path23312" />
+
+</g>
+  </g>
+</svg>

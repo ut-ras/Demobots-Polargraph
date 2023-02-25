@@ -2,8 +2,8 @@
 #define __POLARGRAPH_H__
 
 /* Measurements (mm)*/
-#define X_MAX 515
-#define Y_MAX 290
+#define X_MAX 445
+#define Y_MAX 300
 #define STEP_MULT 8
 #define PULLEY_RADIUS 43  //update this
 #define PULLEY_CIRC (2 * PULLEY_RADIUS * PI)
