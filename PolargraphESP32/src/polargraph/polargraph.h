@@ -3,7 +3,7 @@
 
 /* Measurements (mm)*/
 #define X_MAX 445
-#define Y_MAX 300
+#define Y_MAX 350
 #define STEP_MULT 8
 #define PULLEY_RADIUS 43  //update this
 #define PULLEY_CIRC (2 * PULLEY_RADIUS * PI)
