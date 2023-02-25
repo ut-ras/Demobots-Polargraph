@@ -70,7 +70,6 @@ You should see a page that looks like this:
 
 Click on the button marked `Zero` to set the current position as the origin of the graph.
 
-### Points
 
 Get a feel for the limits of the board, as the current code is weird and inconsistent. As of 02/25/23, the whiteboard attached is 35" by 24", with a usable area about half an inch less due to the tape. There also appears to be some sort of coded change to the Y-Max set in [polargraph.h](../PolargraphESP32/src/polargraph/polargraph.h) that cuts it down a bit. 
 
@@ -80,6 +79,7 @@ This all translates to the rough limits of:
 |--|--|--|--|
 | 440 mm  | -440 mm  | (~) 300 mm| -350 mm|
 
+### Points
 
 You can input `(x,y)` coordinates you want the gondola to travel to in the text box at the top.
 
@@ -93,7 +93,53 @@ You can chain together multiple points in sequence like this: `(x1,y1)(x2,y2)(x3
 
 (Remember that drawing straight lines is hard to do manually, as this uses a Bipolar coordinate system for the movement, so it makes arcs when traveling between points.) 
 
-To return to the origin, dont press `Zero`! This isn't a 3D Printer, it doesn't have any position feedback. Simply type `(0,0)` into the text box 
+To return to the origin, dont press `Zero`! This isn't a 3D Printer, it doesn't have any position feedback. 
+Simply type `(0,0)` into the text box and press `Start`.
+
+### Uploading Vector Files (Drawings)
+
+Before connecting to Polargraph, download the SVG files found [here](SVGs/WORKING).
+
+Click the `Choose File` button on the webpage, and select the SVG file you want to draw.
+
+Scale the SVG if needed [(see below)]((notes-on-svg-files)) in the `Scale SVG` box. This is a multiplier for the default size of the file, numbers greater than `1.0` will increase the size, to decrease the size of the image, input the scale as a decimal less than `1.0`. For example: for a 175% scale, type: `1.75`, for a for a 35% scale, type: `0.35`. (Negative values will flip the drawing, try to avoid that).
+
+Don't worry about the `Distance Between Points` box, changing this number can break things, leave at `2`.
+
+After you've chosen your file and scaled to your heart's desire, click  the `Read` button. 
+
+This loads the drawing path, scroll down to see the preview windows, the top is the SVG, the bottom is the drawing path that Polargraph will take.
+
+Click `Start Drawing` to start drawing! (who would've guessed?)
+
+
+
+# ---WIP PAST HERE---
+
+
+### Notes On SVG Files
+
+
+The vector to movement algohrithm is complicated, and to be honest, I'm no sure what file actually contains that code, So I've had to work out the following by trial and error:
+
+- Only certain SVG's will work properly, they have to consist of vector paths only with a thickness of one pixel.
+- Don't use any "image to vector" converters online, its best to trace out the path of the drawing you want using Inkscape or a similar program.
+- Some of the 'Working' SVG files are still too big/small to be drawn properly in the current configuration. Resize them based on the notes below:
+
+#### Working SVG Files
+
+SVG's confirmed to work can be found [here](SVGs/WORKING)
+
+[longhorn.svg](SVGs/WORKING/longhorn.svg)
+
+<img src="SVGs/WORKING/longhorn.svg" width="300">
+
+- Best SVG we have so far
+- Is fairly small by default, but not undrawable, you should be able to scale to 4-5ish 
+
+
+
+
 
 
 
