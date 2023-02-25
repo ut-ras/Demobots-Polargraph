@@ -103,7 +103,7 @@ Before connecting to Polargraph, download the SVG files found [here](SVGs/WORKIN
 
 Click the `Choose File` button on the webpage, and select the SVG file you want to draw.
 
-Scale the SVG if needed [(see below)]((notes-on-svg-files)) in the `Scale SVG` box. This is a multiplier for the default size of the file, numbers greater than `1.0` will increase the size, to decrease the size of the image, input the scale as a decimal less than `1.0`. For example: for a 175% scale, type: `1.75`, for a for a 35% scale, type: `0.35`. (Negative values will flip the drawing, try to avoid that).
+Scale the SVG if needed [(see below)](svg-files) in the `Scale SVG` box. This is a multiplier for the default size of the file, numbers greater than `1.0` will increase the size, to decrease the size of the image, input the scale as a decimal less than `1.0`. For example: for a 175% scale, type: `1.75`, for a for a 35% scale, type: `0.35`. (Negative values will flip the drawing, try to avoid that).
 
 Don't worry about the `Distance Between Points` box, changing this number can break things, leave at `2`.
 
@@ -117,15 +117,13 @@ When you're down with that drawing, or want to have something new on the board, 
 
 ***Don't*** click `Read SVG` while you already have a SVG loaded in. Having more than one at a time can result in bad paths. 
 
-See [Troubleshooting](troubleshooting) below if you're having issues.
 
-# ---WIP PAST HERE---
-
-
-### Notes On SVG Files
+## SVG Files
 
 
-The vector to movement algohrithm is complicated, and to be honest, I'm no sure what file actually contains that code, So I've had to work out the following by trial and error:
+The vector to movement algohrithm is complicated, and to be honest, I'm not sure which file here actually contains that code...
+
+So I've had to work out the following by trial and error!
 
 - Only certain SVG's will work properly, they have to consist of vector paths only with a thickness of one pixel.
 - Don't use any "image to vector" converters online, its best to trace out the path of the drawing you want using Inkscape or a similar program.
