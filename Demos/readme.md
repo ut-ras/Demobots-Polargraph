@@ -3,8 +3,19 @@
 This guide will hopefully be able to cover everything you'd need to know for demos and SVG files, and will be updated as the project changes. Still, if you encounter any issues, don't hesitate to reach out to me on discord!
  
 #####  - Jake (Demobots Head) 
-##
- ## Setup and Inspection
+
+ - [Setup and Inspection](#setup-and-inspection)
+   - [Breadboard Diagram](#breadboard-diagram)
+   - [Optional - Changi+ng Out Paper](#optional---changing-out-paper)
+ - [Connecting](#connecting)
+   - [SSID/password](#connect-to-the-esp32s-access-point-using)
+ - [Drawing](#drawing)
+   - [Points](#points)
+   - [Vector Drawings](#uploading-vector-files-drawings)
+ - [SVG Files](#svg-files)
+   - [Working SVG Files](#working-svg-files)
+
+## Setup and Inspection
 In it's current state, Polargraph is a little heavy and very unwieldy and cumbersome to move around, so be careful and ask for help if you need it. Be sure to grab it's wooden laser-cut stand (better one coming in the future) from the RAS Office as well.
 
 After you've propped it up securely, verify that the winches (black wheels attached the motors) don't have any of their tension string tangled around them. Unravel the power supply cord from Polargraph and set aside. 
@@ -32,7 +43,7 @@ You'll notice the ESP32's red light come on, along with a quiet but noticable no
 
  *(Notice that when the Polargraph loses power, the steppers go limp and drop the gondola, we avoid that by placing the string of each winch hooked on the paper clip its next to.)*
 
- ## Optional - Changing Out Paper 
+ ## Optional - Changi+ng Out Paper 
 Get a piece/roll of large paper and cut it to your desired size, and either attach it to the board using the paperclips already on there, or by using tape. be sure to account for clearence with the winches when sizing your paper.
 
 After you've attached the paper, either measure or guestimate the exact center of the page and mark it with a dot using the marker. There are guide arrows on the top and the left of the whiteboard that point to the center of the usable area.
@@ -46,7 +57,7 @@ Now place your marker ***(DRY ERASE ONLY)*** in the gondola, and secure it using
 
 *The current Polargraph code can be finnicky about what SVG's it likes and which it doesn't like, so I've gone ahead and verified/prepared some good demonstration drawings:*
 
-[Click here for working SVG files.](SVGs/WORKING)
+[Click here for working SVG files](working-svg-files)
 
 On your device's wifi settings, disable any automatic reconnection to the ***utexas*** wifi (or other public access points), this helps to avoid accidental disconnections.
 
@@ -127,7 +138,10 @@ So I've had to work out the following by trial and error!
 
 - Only certain SVG's will work properly, they have to consist of vector paths only with a thickness of one pixel.
 - Don't use any "image to vector" converters online, its best to trace out the path of the drawing you want using Inkscape or a similar program.
-- Some of the 'Working' SVG files are still too big/small to be drawn properly in the current configuration. Use them based on the notes below:
+- Some of the 'Working' SVG files are still too big/small to be drawn properly in the current configuration. Use them based on the notes below.
+
+
+
 
 ### Working SVG Files
 
@@ -161,4 +175,3 @@ ________________________________________________________
 - Gets squished/squashed weird sometimes
 ________________________________________________________
 
-(further working SVG files will have an entry here as well)
