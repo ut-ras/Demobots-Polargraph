@@ -150,21 +150,17 @@ ________________________________________________________
 - About the same as longhorn.svg in terms of sizing and centering, ugly travel path is smaller.
 - ***aww man***
 ________________________________________________________
+[Spiral.svg](SVGs/WORKING/Spiral.svg)
+<img src="SVGs/WORKING/Spiral.svg" width=300>
+- As you can see from the preview here it's centering is off by a lot, the whole spiral is drawn though, but (for some stupid reason I'm sure) the spiral is centered down and to the right when read into Polargraph.
+- I wouldn't go above a 2x for this one, its fairly big as is.
+________________________________________________________
+[running-dog-silhouette.svg](SVGs/WORKING/running-dog-silhouette.svg)
 
+<img src="SVGs/WORKING/running-dog-silhouette.svg" class="center" width=300>
 
+- ***May be too big by default***, I haven't tested it in since implementing the currect conifugrations, play around with it. 
+- Gets squished/squashed weird sometimes
+________________________________________________________
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ---WIP---
+(further working SVG files will have an entry here as well)
