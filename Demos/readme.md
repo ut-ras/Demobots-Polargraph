@@ -63,4 +63,7 @@ On your device's wifi settings, disable any automatic reconnection to the ***ute
 
 You should see a webpage that looks like this:
 
+![html](html.png)
+
+
 # ---WIP---
