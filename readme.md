@@ -15,9 +15,10 @@ This repo contains different codebases: PolargraphESP32 (maintained) and Polargr
 
 ### Updates:
 
-Currently working on the PolargraphESP32 code, getting it to a more easy to use state. 
+We have a whiteboard!!!!
 
-More detailed user instructions for demonstrations will follow soon.</br>
+There are now comprehensive demo instructions!!!!
+
  
 # How does it work?
 
