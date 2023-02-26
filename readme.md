@@ -25,7 +25,7 @@ More detailed user instructions for demonstrations will follow soon.</br>
 
 (Both require the [AccelStepper](https://www.airspayce.com/mikem/arduino/AccelStepper/index.html) library)
 
-### [PolargraphESP32](PolargraphESP32) (Maintained)
+### [PolargraphESP32](PolargraphESP32) (In use, not maintained)
 Runs on an ESP32 in FreeRTOS. Hosts a web server and control interface on the device, and can either connect to an access point or deploy one. Allows user to upload SVG drawing for robot to draw.
 
 ### {DEPRECATED} PolargraphArduinoGIOT 
