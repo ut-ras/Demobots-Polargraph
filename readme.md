@@ -1,5 +1,4 @@
-# Demobots Polargraph - RELEASE BRANCH (WORKING CODE ONLY)
-#### (*under new management!*)
+# Demobots Polargraph
 ![Polargraph GIF](Demos/02-2023polargraph.gif)
 
 
