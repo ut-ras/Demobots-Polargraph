@@ -57,7 +57,7 @@ Now place your marker ***(DRY ERASE ONLY)*** in the gondola, and secure it using
 
 *The current Polargraph code can be finnicky about what SVG's it likes and which it doesn't like, so I've gone ahead and verified/prepared some good demonstration drawings:*
 
-[Click here for working SVG files](working-svg-files)
+([Click here for working SVG files](working-svg-files))
 
 On your device's wifi settings, disable any automatic reconnection to the ***utexas*** wifi (or other public access points), this helps to avoid accidental disconnections.
 
