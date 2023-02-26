@@ -6,7 +6,7 @@ This guide will hopefully be able to cover everything you'd need to know for dem
 
  - [Setup and Inspection](#setup-and-inspection)
    - [Breadboard Diagram](#breadboard-diagram)
-   - [Optional - Changi+ng Out Paper](#optional---changing-out-paper)
+   - [Optional - Changing Out Paper](#optional---changing-out-paper)
  - [Connecting](#connecting)
    - [SSID/password](#connect-to-the-esp32s-access-point-using)
  - [Drawing](#drawing)
@@ -43,7 +43,7 @@ You'll notice the ESP32's red light come on, along with a quiet but noticable no
 
  *(Notice that when the Polargraph loses power, the steppers go limp and drop the gondola, we avoid that by placing the string of each winch hooked on the paper clip its next to.)*
 
- ## Optional - Changi+ng Out Paper 
+ ## Optional - Changing Out Paper 
 Get a piece/roll of large paper and cut it to your desired size, and either attach it to the board using the paperclips already on there, or by using tape. be sure to account for clearence with the winches when sizing your paper.
 
 After you've attached the paper, either measure or guestimate the exact center of the page and mark it with a dot using the marker. There are guide arrows on the top and the left of the whiteboard that point to the center of the usable area.
