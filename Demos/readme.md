@@ -163,8 +163,10 @@ ________________________________________________________
 - ***aww man***
 ________________________________________________________
 [Spiral.svg](SVGs/WORKING/Spiral.svg)
+
+
 <img src="SVGs/WORKING/Spiral.svg" width=300>
-- As you can see from the preview here it's centering is off by a lot, the whole spiral is drawn though, but (for some stupid reason I'm sure) the spiral is centered down and to the right when read into Polargraph.
+- The centering is off by a lot, the whole spiral is drawn though, but (for some stupid reason I'm sure) the spiral is centered down and to the right when read into Polargraph.
 - I wouldn't go above a 2x for this one, its fairly big as is.
 ________________________________________________________
 [running-dog-silhouette.svg](SVGs/WORKING/running-dog-silhouette.svg)
