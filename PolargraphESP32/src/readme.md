@@ -1,7 +1,8 @@
 # Polargraph Source Files
 ##### ***This readme was made using ChatGPT***
 
-## polargraph.cpp & polargraph.h
+
+# [polargraph](/polargraph/)
 The header file defines some constants: a `pos` struct to represent a position on the polargraph, and some functions to interact with the polargraph.
 
 The constants defined are:
@@ -30,3 +31,40 @@ The public functions defined by polargraph.h and used in polargraph.cpp are:
 - `getIsDrawing`: gets the current drawing state of the polargraph.
 - `setIsDrawing`: sets the drawing state of the polargraph.
 
+_________________________
+
+# [iot](/iot/)
+
+
+## wifi_setup.h
+
+The `setupWiFiAutoScan()`, `setupWiFiAuto(`), and `setupWiFi()` functions are used to initialize the WiFi connection. `setupWiFiAutoScan()` scans for available WiFi networks, and if it finds the desired network, it connects to it as a Station (STA). If it doesn't find the network, it creates an Access Point (AP) and sets the IP address accordingly. `setupWiFiAuto()` does the same thing, but assumes that the WiFi mode is set to "AUTO". Finally, `setupWiFi()` is a more general function that allows the user to specify whether they want to use AP or STA mode.
+
+The file also defines the local_IP, gateway, and subnet IP addresses, which are used to configure the static IP address of the Polargraph machine.
+## iot_config.h
+This file is a header for wifi_setup.h and defines the WiFi mode (`WIFI_MODE`) and the SSID and password for the WiFi network.
+
+"AP" is currently set for access point mode.
+
+
+
+## templates.h
+This file contains html templates for [PolargraphESP32/static](../static)
+
+
+
+## json.parse.h
+
+This file contains a simple JSON parser.
+
+### Functionality
+
+The `getFromJson` function extracts a value from a JSON string given the attribute name. The function assumes that there are no duplicate names in the JSON string. The function finds values in the format `'attr_name':'val'` and returns `val`. 
+
+The `getFromJson2` function is similar to `getFromJson`, but it returns a default value if the attribute is not found in the JSON string.
+
+The `stringToBool` function converts a string value of either `"true"` or `"false"` to a boolean value.
+
+### Future Improvements
+
+The file contains a comment about potential improvements to the JSON parser. Specifically, the comment suggests using a thread with a char queue input to constantly stream chars from the queue and parse all JSON and coordinates into the polargraph input in one pass, just checking for the delimiters `{`, `:`, etc.
