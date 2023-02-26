@@ -9,7 +9,7 @@ Automated Drawing Robot originally built by the 2018-2019 Demobots comittee.
 
 Demobots is currently working on improving and adding to features to Polargraph (as of 2023).
 
-This repo contains different codebases: PolargraphESP32 (maintained) and PolargraphArduinoGIOT (deprecated, but may be visited sometime in the future).
+This repo contains different codebases: PolargraphESP32 (used, but not maintained) and PolargraphArduinoGIOT (deprecated, but may be visited sometime in the future).
 
 
 
