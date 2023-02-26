@@ -57,7 +57,7 @@ Now place your marker ***(DRY ERASE ONLY)*** in the gondola, and secure it using
 
 *The current Polargraph code can be finnicky about what SVG's it likes and which it doesn't like, so I've gone ahead and verified/prepared some good demonstration drawings:*
 
-([Click here for working SVG files](working-svg-files))
+([Click here for working SVG files](#working-svg-files))
 
 On your device's wifi settings, disable any automatic reconnection to the ***utexas*** wifi (or other public access points), this helps to avoid accidental disconnections.
 
@@ -114,7 +114,7 @@ Before connecting to Polargraph, download the SVG files found [here](SVGs/WORKIN
 
 Click the `Choose File` button on the webpage, and select the SVG file you want to draw.
 
-Scale the SVG if needed [(see below)](svg-files) in the `Scale SVG` box. This is a multiplier for the default size of the file, numbers greater than `1.0` will increase the size, to decrease the size of the image, input the scale as a decimal less than `1.0`. For example: for a 175% scale, type: `1.75`, for a for a 35% scale, type: `0.35`. (Negative values will flip the drawing, try to avoid that).
+Scale the SVG if needed [(see below)](#svg-files) in the `Scale SVG` box. This is a multiplier for the default size of the file, numbers greater than `1.0` will increase the size, to decrease the size of the image, input the scale as a decimal less than `1.0`. For example: for a 175% scale, type: `1.75`, for a for a 35% scale, type: `0.35`. (Negative values will flip the drawing, try to avoid that).
 
 Don't worry about the `Distance Between Points` box, changing this number can break things, leave at `2`.
 
