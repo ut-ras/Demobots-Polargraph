@@ -18,9 +18,9 @@
 #include <Arduino.h>
 #include <esp_task_wdt.h>
 
-#include "../lib/iot/webserver.h"
-#include "../lib/iot/wifi_setup.h"
-#include "../lib/polargraph/polargraph.h"
+#include "/iot/webserver.h"
+#include "/iot/wifi_setup.h"
+#include "/polargraph/polargraph.h"
 
 
 // Macro for printing debug information, quickly turn prints on/ off
