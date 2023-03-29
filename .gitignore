@@ -11,3 +11,4 @@ DEPRECATED_FILES/PolargraphArduinoGIOT/.DS_Store
 .DS_Store
 PolargraphESP32/sdkconfig.pico32
 .gitignore
+PolargraphESP32/.*
