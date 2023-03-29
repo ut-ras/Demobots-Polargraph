@@ -9,3 +9,5 @@ DEPRECATED_FILES/PolargraphArduinoGIOT/.DS_Store
 PolargraphESP32/.vscode/extensions.json
 DEPRECATED_FILES/PolargraphArduinoGIOT/.DS_Store
 .DS_Store
+PolargraphESP32/sdkconfig.pico32
+.gitignore
