@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2b34dbbc-a748-44dd-bdc4-58ef319befaf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/polargraph.h" beforeDir="false" afterPath="$PROJECT_DIR$/polargraph.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +44,7 @@
       <updated>1677016355053</updated>
       <workItem from="1677016356523" duration="936000" />
       <workItem from="1677023315115" duration="1000" />
+      <workItem from="1677294014431" duration="1114000" />
     </task>
     <servers />
   </component>
