@@ -1,1 +1,11 @@
 PolargraphESP32/platformio.ini
+PolargraphESP32/CMakeLists.txt
+.gitignore
+PolargraphESP32/src/CMakeLists.txt
+PolargraphESP32/.vscode/settings.json
+.gitignore
+DEPRECATED_FILES/PolargraphArduinoGIOT/.DS_Store
+.DS_Store
+PolargraphESP32/.vscode/extensions.json
+DEPRECATED_FILES/PolargraphArduinoGIOT/.DS_Store
+.DS_Store
