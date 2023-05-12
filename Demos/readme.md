@@ -147,7 +147,7 @@ So I've had to work out the following by trial and error!
 
 SVG's confirmed to work can be found [here](SVGs/WORKING)
 ________________________________________________________
-[longhorn.svg](SVGs/WORKING/longhorn.svg)
+[longhorn](SVGs/WORKING/longhorn.svg)
 
 <img src="SVGs/WORKING/longhorn.svg">
 
@@ -155,21 +155,21 @@ ________________________________________________________
 - Centered on origin well, but the drawing path starts at the tip of the right horn, so there will be an ugly travel line unless you tell it to move to that coordinate and erase the travel line before starting drawing. 
 - It is fairly small by default, but not undrawable, you should be able to scale to 5ish at the most, experiment with it.
 ________________________________________________________
-[creeper.svg](SVGs/WORKING/creeper.svg)
+[creeper](SVGs/WORKING/creeper.svg)
 
 <img src="SVGs/WORKING/creeper.svg">
 
 - About the same as longhorn.svg in terms of sizing and centering, ugly travel path is smaller.
 - ***aww man***
 ________________________________________________________
-[Spiral.svg](SVGs/WORKING/Spiral.svg)
+[Spiral](SVGs/WORKING/Spiral.svg)
 
 
 <img src="SVGs/WORKING/Spiral.svg" width=300>
 - The centering is off by a lot, the whole spiral is drawn though, but (for some stupid reason I'm sure) the spiral is centered down and to the right when read into Polargraph.
 - I wouldn't go above a 2x for this one, its fairly big as is.
 ________________________________________________________
-[running-dog-silhouette.svg](SVGs/WORKING/running-dog-silhouette.svg)
+[running-dog-silhouette](SVGs/WORKING/running-dog-silhouette.svg)
 
 <img src="SVGs/WORKING/running-dog-silhouette.svg" class="center" width=300>
 
